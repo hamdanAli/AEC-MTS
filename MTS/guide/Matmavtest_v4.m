@@ -28,9 +28,18 @@ NED_2=mav.get_LocalNED(1);
 n2=[NED_2.x NED_2.y NED_2.z]
 
 %%
-for i = 1:100
-NED_x(i)= mav.get_LocalNED(1).x; 
+
+for i = 1:100000
+% NED_x(i)= mav.get_LocalNED(1).x; 
+% 
+% NED_y(i)= mav.get_LocalNED(1).y; 
+% 
+% NED_z(i)= mav.get_LocalNED(1).z;
+roll(i)=mav.get_Attitude(1).roll;
+pause(1/100000)
 end
+plot(roll)
+
 %% disconnect and clean MatMav object
 mav.Disconnect();
 mav.delete();
