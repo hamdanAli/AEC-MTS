@@ -1,5 +1,5 @@
 function cmav
-    mav.Disconnect;
-    mav.delete;
+    mav.Disconnect();
+    mav.delete();
     clear
     clc
